@@ -4,7 +4,7 @@ runtime:
   cache_dir: ./.cache/antora
 
 site:
-  title: Requirements Tool
+  title: reqstool
   url: https://reqstool.github.io
   start_page: reqstool::index.adoc
 
