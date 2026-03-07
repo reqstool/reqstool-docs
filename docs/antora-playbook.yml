@@ -10,7 +10,7 @@ site:
 
 content:
   sources:
-    - url: .
+    - url: ./../
       branches: HEAD
       start_path: docs
     - url: https://github.com/reqstool/reqstool-client
