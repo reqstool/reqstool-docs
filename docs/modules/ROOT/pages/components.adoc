@@ -1,0 +1,101 @@
+= Components
+
+== Core
+
+[cols="2,3,1,1"]
+|===
+| Component | Description | Language | Package
+
+| xref:reqstool-client::index.adoc[Command Line Client]
+| Core CLI tool for generating reports, JSON exports, and status checks
+| Python
+| https://pypi.org/project/reqstool/[PyPI]
+
+|===
+
+== Java
+
+[cols="2,3,1,1"]
+|===
+| Component | Description | Language | Package
+
+| xref:reqstool-java-annotations::index.adoc[Java Annotations]
+| `@Requirements` and `@SVCs` annotations
+| Java 21+
+| https://central.sonatype.com/search?q=io.github.reqstool[Maven Central]
+
+| xref:reqstool-java-maven-plugin::index.adoc[Maven Plugin]
+| Maven build plugin for assembling reqstool ZIP artifacts
+| Java 21+
+| https://central.sonatype.com/search?q=io.github.reqstool[Maven Central]
+
+| xref:reqstool-java-gradle-plugin::index.adoc[Gradle Plugin]
+| Gradle build plugin for assembling reqstool ZIP artifacts
+| Java 21+
+| https://plugins.gradle.org/plugin/io.github.reqstool.gradle-plugin[Gradle Plugin Portal]
+
+|===
+
+== Python
+
+[cols="2,3,1,1"]
+|===
+| Component | Description | Language | Package
+
+| xref:reqstool-python-decorators::index.adoc[Python Decorators]
+| `@Requirements` and `@SVCs` decorators for Python
+| Python 3.13+
+| https://pypi.org/project/reqstool-python-decorators/[PyPI]
+
+| xref:reqstool-python-hatch-plugin::index.adoc[Hatch Plugin]
+| Hatch build hook for collecting annotations and test results
+| Python
+| https://pypi.org/project/reqstool-python-hatch-plugin/[PyPI]
+
+| xref:reqstool-python-poetry-plugin::index.adoc[Poetry Plugin]
+| Poetry build plugin for collecting annotations and test results
+| Python
+| https://pypi.org/project/reqstool-python-poetry-plugin/[PyPI]
+
+|===
+
+== TypeScript / JavaScript
+
+[cols="2,3,1,1"]
+|===
+| Component | Description | Language | Package
+
+| xref:reqstool-typescript-tags::index.adoc[TypeScript Tags]
+| Annotation tag processor for TypeScript/JavaScript projects
+| TypeScript
+| https://www.npmjs.com/package/@reqstool/reqstool-typescript-tags[npm]
+
+|===
+
+== Editor & Tooling
+
+[cols="2,3,1"]
+|===
+| Component | Description | Language
+
+| xref:reqstool-vscode-extension::index.adoc[VS Code Extension]
+| Hover information and file watching for reqstool in VS Code
+| TypeScript
+
+| xref:reqstool-ai::index.adoc[AI Integration]
+| AI-assisted requirements management (Claude Code skills and conventions)
+| Shell
+
+|===
+
+== Example
+
+[cols="2,3,1"]
+|===
+| Component | Description | Language
+
+| xref:reqstool-demo::index.adoc[Demo Project]
+| Complete working example with Maven and Gradle builds
+| Java
+
+|===

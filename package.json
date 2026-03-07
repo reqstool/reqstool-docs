@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "antora docs/antora-playbook.yml",
+    "build:local": "antora docs/local-antora-playbook.yml",
+    "preview": "npx http-server docs/build/site -o"
+  },
+  "dependencies": {
+    "antora": "^3.1",
+    "asciidoctor-kroki": "^0.18"
+  }
+}

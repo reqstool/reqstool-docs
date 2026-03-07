@@ -1,7 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/asciidoctor/asciidoctor-intellij-plugin/main/src/main/resources/jsonSchemas/antoraPlaybookSchema.json
+# For local development only. Published site: https://reqstool.github.io
 
 runtime:
-  cache_dir: ./.cache/antora
+  cache_dir: ../.cache/antora
 
 site:
   title: Requirements Tool
@@ -10,40 +11,40 @@ site:
 
 content:
   sources:
-    - url: .
+    - url: ~+
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-client
+    - url: ../reqstool-client
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-demo
+    - url: ../reqstool-demo
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-java-annotations
+    - url: ../reqstool-java-annotations
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-java-maven-plugin
+    - url: ../reqstool-java-maven-plugin
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-java-gradle-plugin
+    - url: ../reqstool-java-gradle-plugin
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-python-decorators
+    - url: ../reqstool-python-decorators
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-python-poetry-plugin
+    - url: ../reqstool-python-poetry-plugin
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-python-hatch-plugin
+    - url: ../reqstool-python-hatch-plugin
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-vscode-extension
+    - url: ../reqstool-vscode-extension
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-typescript-tags
+    - url: ../reqstool-typescript-tags
       branches: HEAD
       start_path: docs
-    - url: https://github.com/reqstool/reqstool-ai
+    - url: ../reqstool-ai
       branches: HEAD
       start_path: docs
 
@@ -63,6 +64,6 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
-    snapshot: true
+    url: ./../.cache/antora/ui-bundle.zip
+    snapshot: false
   supplemental_files: ./../supplemental-ui

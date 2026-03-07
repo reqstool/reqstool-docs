@@ -1,0 +1,23 @@
+= Terminology
+
+|===
+| Term | Description
+
+| Requirements
+| The actual requirement the software needs to implement
+
+| Software Verification Cases (SVCs)
+| An instruction of a test that can be automated (unit, integration etc) or manual
+
+| Manual Verification Results (MVRs)
+| Result of a test performed manually
+
+| Requirement Annotation (requirements_annotations)
+| The annotation used in code to track where a specific requirement is implemented
+
+| Test Annotation (svcs_annotations)
+| The annotation used in tests to specify where an SVC is tested
+
+| Requirement Config (reqstool_config)
+| A file where custom paths to the required YAML files can be specified
+|===

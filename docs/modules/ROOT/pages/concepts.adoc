@@ -1,0 +1,55 @@
+= Concepts
+
+== Linking code with annotations
+
+reqstool uses annotations to couple requirements and software verification cases (SVCs) with code implementations and test results. You annotate functions or classes with `@Requirements` to mark where a requirement is implemented, and `@SVCs` to mark where an SVC is tested.
+
+Each ecosystem has its own annotation framework:
+
+* **Java** -- xref:reqstool-java-annotations::index.adoc[reqstool-java-annotations] (annotations)
+* **Python** -- xref:reqstool-python-decorators::index.adoc[reqstool-python-decorators] (decorators)
+* **TypeScript** -- xref:reqstool-typescript-tags::index.adoc[reqstool-typescript-tags] (tags)
+
+See each project's documentation for installation and usage details.
+
+== How parsing works
+
+When reqstool processes data from multiple sources, parsing begins sequentially from the URI the user provides. This becomes the initial source of the reqstool report. For example, if you have a microservice (ms-001) that inherits requirements from another source (ext-001), you start the parsing in the `docs/requirements` path of ms-001.
+
+When the initial source's requirement files are processed, reqstool continues to parse the other sources specified within the `imports` parameter of the initial source's requirement file. If xref:data.adoc#filters[filters] are applied in the initial source, the data in the following sources will adhere to these settings.
+
+For example, to exclude one requirement from ext-001, specify it in the `requirements.yml` file of the ms-001 project:
+
+[source,yaml]
+----
+imports:
+  local:
+    - path: ./ext-001
+
+filters:
+  ext-001:
+    requirement_ids:
+      excludes:
+        - REQ_101
+----
+
+When reqstool reads the data from ext-001, REQ_101 will not be imported, but all other requirements specified in ext-001's `requirements.yml` file will.
+
+Filters can currently be applied to `requirements.yml` and `software_verification_cases.yml`.
+
+== Custom paths
+
+If you are providing a path to a git repository or a Maven artifact, you can override the xref:files-and-directories.adoc#reqstool_config[reqstool_config.yml] of the YAML files by providing a `reqstool_config.yml` file in the same folder as your `requirements.yml`. In the `reqstool_config.yml`, you describe the structure of your repository/artifact and specify where the required YAML files are located. If reqstool detects such a file, it will locate the required files from the paths described in the `reqstool_config.yml` instead of the defaults.
+
+== Validation
+
+reqstool validates that the data within the YAML files is as correct as possible. If any errors are found, it prints a summary to stdout so that errors can be detected and corrected quickly.
+
+The main things that are validated:
+
+* No duplicate Requirement/SVC/MVR IDs
+* SVCs refer to requirements that actually exist
+* Annotation implementations refer to existing requirements
+* Annotation tests refer to existing SVCs
+* MVRs refer to existing SVCs
+* SVCs and requirements have only one of the import/exclude filters set per file
