@@ -55,7 +55,6 @@ asciidoc:
     idseparator: "-"
     page-pagination: ""
     kroki-server-url: https://kroki.io
-    kroki-fetch-diagram: true
     allow-uri-read: true
     sectnumlevels: 4
     toclevels: 3

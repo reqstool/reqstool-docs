@@ -12,7 +12,7 @@ reqstool is an open-source toolchain for managing software requirements with ful
 
 == How it works
 
-[kroki,mermaid]
+[mermaid]
 ....
 graph LR
     A["Requirements (YAML)"] --> D["reqstool"]
