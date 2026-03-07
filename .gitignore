@@ -112,3 +112,9 @@ fabric.properties
 
 # Claude Code
 .claude/
+
+# Antora
+.cache/
+node_modules/
+docs/build/
+ui-bundle.zip

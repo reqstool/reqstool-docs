@@ -1,0 +1,52 @@
+/* reqstool branding - black, white, green */
+:root {
+  --color-brand-green: #4CAF50;
+  --color-brand-dark: #1a1a1a;
+}
+
+.navbar {
+  background-color: var(--color-brand-dark);
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+}
+
+.navbar .navbar-item,
+.navbar .navbar-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar .navbar-item:hover,
+.navbar .navbar-link:hover {
+  color: var(--color-brand-green);
+}
+
+.doc .listingblock pre {
+  border-left: 3px solid var(--color-brand-green);
+}
+
+a {
+  color: var(--color-brand-green);
+}
+
+a:hover {
+  color: #388E3C;
+}
+
+.nav-link.is-active {
+  color: var(--color-brand-green);
+  border-left-color: var(--color-brand-green);
+}
+
+.doc h1,
+.doc h2,
+.doc h3 {
+  color: var(--color-brand-dark);
+}
+
+.footer {
+  background-color: var(--color-brand-dark);
+  color: rgba(255, 255, 255, 0.7);
+}

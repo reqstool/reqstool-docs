@@ -1,0 +1,36 @@
+= Getting Started
+
+== Java projects
+
+. Add the xref:reqstool-java-annotations::index.adoc[Java Annotations] dependency to your project
+. Annotate implementations with `@Requirements("REQ_001")` and tests with `@SVCs("SVC_001")`
+. Add the xref:reqstool-java-maven-plugin::index.adoc[Maven Plugin] or xref:reqstool-java-gradle-plugin::index.adoc[Gradle Plugin] to your build
+. The plugin assembles a ZIP artifact with requirements, annotations, and test results
+. Install the CLI: `pipx install reqstool`
+. Run: `reqstool status local -p docs/reqstool`
+
+See the xref:reqstool-demo::index.adoc[Demo Project] for a complete working example.
+
+== Python projects
+
+. Add `reqstool-python-decorators` as a dependency
+. Decorate implementations with `@Requirements("REQ_001")` and tests with `@SVCs("SVC_001")`
+. Add the xref:reqstool-python-hatch-plugin::index.adoc[Hatch Plugin] or xref:reqstool-python-poetry-plugin::index.adoc[Poetry Plugin] to your build
+. Install the CLI: `pipx install reqstool`
+. Run: `reqstool status local -p docs/reqstool`
+
+== TypeScript projects
+
+. Add `@reqstool/reqstool-typescript-tags` as a dev dependency
+. Tag your code with reqstool annotations
+. Run the tag processor: `reqstool-typescript-tags --inputs src,tests --output docs/reqstool/annotations.yml`
+. Install the CLI: `pipx install reqstool`
+. Run: `reqstool status local -p docs/reqstool`
+
+== VS Code integration
+
+Install the xref:reqstool-vscode-extension::index.adoc[VS Code Extension] from the marketplace to get hover information for requirements and SVCs directly in your editor.
+
+== AI-assisted workflow
+
+Use xref:reqstool-ai::index.adoc[reqstool-ai] to integrate requirements management into AI coding assistants like Claude Code.

@@ -1,0 +1,92 @@
+= Requirements Tool
+
+== What is reqstool?
+
+Reqstool is an open-source toolchain for managing software requirements with full traceability to implementation and test results.
+
+* **Define** requirements in YAML files with references between systems and microservices
+* **Annotate** code to link implementations and tests to requirements (Java, Python, TypeScript)
+* **Verify** that every requirement is implemented, tested, and passing
+* **Report** with generated AsciiDoc/PDF reports for auditors and stakeholders
+
+== How it works
+
+[kroki,mermaid]
+....
+graph LR
+    A["Requirements\n(YAML)"] --> B["Annotations\n(@Requirements, @SVCs)"]
+    B --> C["Test Results\n(JUnit XML)"]
+    A --> D["reqstool"]
+    B --> D
+    C --> D
+    D --> E["Status Report"]
+    D --> F["AsciiDoc Report"]
+    D --> G["JSON Export"]
+....
+
+== Ecosystem
+
+Reqstool provides components for multiple languages and build systems:
+
+[cols="1,2,1"]
+|===
+| Component | Description | Language
+
+| xref:reqstool-client::index.adoc[Command Line Client]
+| Core CLI for status checks, reports, and JSON export
+| Python
+
+| xref:reqstool-java-annotations::index.adoc[Java Annotations]
+| `@Requirements` and `@SVCs` annotations for Java
+| Java
+
+| xref:reqstool-java-maven-plugin::index.adoc[Maven Plugin]
+| Maven build plugin for assembling reqstool artifacts
+| Java
+
+| xref:reqstool-java-gradle-plugin::index.adoc[Gradle Plugin]
+| Gradle build plugin for assembling reqstool artifacts
+| Java
+
+| xref:reqstool-python-decorators::index.adoc[Python Decorators]
+| `@Requirements` and `@SVCs` decorators for Python
+| Python
+
+| xref:reqstool-python-hatch-plugin::index.adoc[Hatch Plugin]
+| Hatch build hook for Python projects
+| Python
+
+| xref:reqstool-python-poetry-plugin::index.adoc[Poetry Plugin]
+| Poetry build plugin for Python projects
+| Python
+
+| xref:reqstool-vscode-extension::index.adoc[VS Code Extension]
+| Hover info and file watching for VS Code
+| TypeScript
+
+| xref:reqstool-typescript-tags::index.adoc[TypeScript Tags]
+| Annotation support for TypeScript/JavaScript projects
+| TypeScript
+
+| xref:reqstool-ai::index.adoc[AI Integration]
+| AI-assisted requirements management with Claude Code
+| Shell
+
+| xref:reqstool-demo::index.adoc[Demo Project]
+| Full working example with Maven and Gradle
+| Java
+|===
+
+== Quick start
+
+. Install the CLI: `pipx install reqstool`
+. Define requirements in `docs/reqstool/requirements.yml`
+. Annotate your code with `@Requirements` and `@SVCs`
+. Add a build plugin for your ecosystem (xref:reqstool-java-maven-plugin::index.adoc[Maven], xref:reqstool-java-gradle-plugin::index.adoc[Gradle], xref:reqstool-python-hatch-plugin::index.adoc[Hatch], or xref:reqstool-python-poetry-plugin::index.adoc[Poetry])
+. Run `reqstool status local -p docs/reqstool`
+
+See xref:getting-started.adoc[Getting Started] for detailed instructions per language.
+
+== License
+
+All reqstool components are licensed under the https://opensource.org/license/mit/[MIT License] unless otherwise noted.
