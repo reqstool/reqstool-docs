@@ -15,8 +15,8 @@ reqstool is an open-source toolchain for managing software requirements with ful
 [kroki,mermaid]
 ....
 graph LR
-    A["Requirements<br/>(YAML)"] --> B["Annotations<br/>(@Requirements, @SVCs)"]
-    B --> C["Test Results<br/>(JUnit XML)"]
+    A["Requirements (YAML)"] --> B["Annotations (@Requirements, @SVCs)"]
+    B --> C["Test Results (JUnit XML)"]
     A --> D["reqstool"]
     B --> D
     C --> D
